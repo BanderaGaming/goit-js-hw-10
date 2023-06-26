@@ -7,16 +7,17 @@ const error = document.querySelector('.error');
 const catInfOutput = document.querySelector('.cat-info');
 
 const hideEl = (e) =>e.style.display = 'none'; 
-const showEl = (e) => e.style.display = 'flex';
+const showElBlock = (e) => e.style.display = 'block';
+const showElFlex= (e) => e.style.display = 'flex';
 const onChoose = (event) => {
     hideEl(catInfOutput);
-    showEl(loader);
+    showElBlock(loader);
     fetchCatByBreed(event.target.value)
         .then(data => makeMarkup(data))
         .catch(err => {
-            console.warn(err); hideEl(loader);showEl(error)
+            console.warn(err); hideEl(loader);showElBlock(error)
         })
-        .finally(()=>{hideEl(loader);showEl(catInfOutput)});
+        .finally(()=>{hideEl(loader);showElFlex(catInfOutput)});
 
 };
 
@@ -38,5 +39,5 @@ hideEl(error);
 catSelector.addEventListener("change", onChoose);
     fetchBreed()
     .then(res => makeOptions(res))
-    .finally(()=>{showEl(catSelector), hideEl(loader)})
-    .catch(err => { console.log(err); showEl(error); hideEl(catSelector) });
+    .finally(()=>{showElFlex(catSelector), hideEl(loader)})
+    .catch(err => { console.log(err); showElBlock(error); hideEl(catSelector) });
