@@ -7,7 +7,7 @@ const error = document.querySelector('.error');
 const catInfOutput = document.querySelector('.cat-info');
 
 const hideEl = (e) =>e.style.display = 'none'; 
-const showEl = (e) => e.style.display = 'block';
+const showEl = (e) => e.style.display = 'flex';
 const onChoose = (event) => {
     hideEl(catInfOutput);
     showEl(loader);
