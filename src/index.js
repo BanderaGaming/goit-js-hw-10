@@ -9,14 +9,14 @@ const catInfOutput = document.querySelector('.cat-info');
 const hideEl = (e) =>e.style.display = 'none'; 
 const showEl = (e) => e.style.display = 'block';
 const onChoose = (event) => {
-    hideEl(catSelector);
+    hideEl(catInfOutput);
     showEl(loader);
     fetchCatByBreed(event.target.value)
         .then(data => makeMarkup(data))
         .catch(err => {
             console.warn(err); hideEl(loader);showEl(error)
         })
-        .finally(()=>{hideEl(loader);showEl(catSelector)});
+        .finally(()=>{hideEl(loader);showEl(catInfOutput)});
 
 };
 
