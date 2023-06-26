@@ -1,4 +1,3 @@
-
 const BASE_URL = 'https://api.thecatapi.com/v1';
 
 function fetchBreed() {
@@ -19,5 +18,4 @@ function fetchCatByBreed(id) {
          return res.json()
       })
 };
-
 export { fetchBreed,fetchCatByBreed };
